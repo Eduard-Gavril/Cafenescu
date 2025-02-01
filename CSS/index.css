@@ -8,14 +8,14 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: #A66E38;
-  --first-color-alt: #FFAD60;
-  --first-color-light: #FFEEAD;
-  --second-color: #96CEB4;
+  --first-color: #FFF2E1;
+  --first-color-alt: #D1BB9E;
+  --first-color-light: #EAD8C0;
+  --second-color: #A79277;
   --title-color: #2e2624;
   --text-color: #5b4c48;
   --text-color-light: #847571;
-  --white-color: #fff;
+  --white-color: #A79277;
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -243,7 +243,10 @@ img {
   margin-bottom: .75rem;
 }
 
-.home__title,
+.home__title{
+  color: black;
+}
+
 .home__description {
   color: var(--white-color);
 }
@@ -262,7 +265,7 @@ img {
 .home__title img {
   width: 80px;
   position: absolute;
-  right: -1rem;
+  right: -4rem;
   bottom: -1.25rem;
 }
 

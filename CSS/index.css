@@ -155,7 +155,7 @@ img {
 }
 
 .nav__logo img {
-  width: 28px;
+  max-width: 130px;
 }
 
 /* Navigation for mobile devices */

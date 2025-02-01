@@ -1,0 +1,36 @@
+
+/* Impostazioni iniziali per l'iframe */
+#my-iframe {
+    padding-left: 35px;
+  }
+  
+  /* Wrapper principale */
+  #main-wrap {
+    margin-top: 20px;
+  }
+  
+  /* Wrapper della ricevuta */
+  #receipt-wrap {
+    transform: translate(9px, 15px);
+    overflow: hidden;
+    opacity: 0; /* Inizialmente nascosto */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transizione per opacità e movimento */
+  }
+  
+  /* La ricevuta (inizialmente nella sua posizione "standard") */
+  #receipt {
+    transform: translate(0, -6px);
+    transition: transform 0.45s ease-in-out; /* Animazione del movimento */
+  }
+  
+  /* Quando la ricevuta deve "uscire verso il basso" */
+  #receipt.open {
+    transform: translate(0, 420px); /* La ricevuta scende */
+  }
+  
+  /* Classe che mostra il wrapper e lo fa diventare visibile */
+  #receipt-wrap.show {
+    opacity: 1; /* Mostra la ricevuta */
+    transform: translate(9px, 15px); /* Mantieni la posizione finale */
+  }
+  

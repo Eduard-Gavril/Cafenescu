@@ -1,5 +1,12 @@
 import './style_AM/index.css'; // keep your app styles here
 import Header from './components/Header';
+import espressoPorcellana from './img/espresso_porcellana.png';
+import espressoMacchiato from './img/espresso_macchiato.png';
+import flavoredLatte from './img/flavored_latte.png';
+import cappuccino from './img/cappucino.png';
+import selezioneChicchi from './img/selezione_chicchi.png';
+import usacareBoabe from './img/usacare_boabe.png';
+import prajealaBoabe from './img/prajeala_boabe.png';
 
 function App() {
   return (
@@ -14,7 +21,7 @@ function App() {
           <div className="home__container container grid">
             <div className="home__data">
               <h3 className="home__subtitle">CALITATE EXCEPȚIONALĂ</h3>
-              <h1 className="home__title">
+              <h1 className="home__title" style={{fontFamily: "'Neonderthaw', cursive"}}>
                 E timpul pentru o <br/>cafenea bună
                 {/* <img src="../CSS/scr/freeUSE/home-coffee-title.png" alt="home image" /> */}
               </h1>
@@ -43,19 +50,88 @@ function App() {
               </div>
               <div className="products__content">
                 <article className="products__card">
-                  <img src="assets/img/product-coffee-1.png" alt="products image" className="products__img" />
-                  <h3 className="products__name">Cafea Clasică</h3>
-                  <span className="products__price">17,90$</span>
+                  <div style={{
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 1.5rem',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)'
+                  }}>
+                    <img src={espressoMacchiato} alt="products image" style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }} />
+                  </div>
+                  <h3 className="products__name">Espresso Macchiato</h3>
+                  <span className="products__price">8.00 RON</span>
                 </article>
                 <article className="products__card">
-                  <img src="assets/img/product-coffee-2.png" alt="products image" className="products__img" />
+                  <div style={{
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 1.5rem',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)'
+                  }}>
+                    <img src={espressoPorcellana} alt="products image" style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }} />
+                  </div>
                   <h3 className="products__name">Espresso</h3>
-                  <span className="products__price">24,90$</span>
+                  <span className="products__price">6.00 RON</span>
                 </article>
                 <article className="products__card">
-                  <img src="assets/img/product-coffee-3.png" alt="products image" className="products__img" />
-                  <h3 className="products__name">Cafea Intensă</h3>
-                  <span className="products__price">32,90$</span>
+                  <div style={{
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 1.5rem',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)'
+                  }}>
+                    <img src={flavoredLatte} alt="products image" style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }} />
+                  </div>
+                  <h3 className="products__name">flavored Latte</h3>
+                  <span className="products__price">14.00 RON</span>
+                </article>
+                <article className="products__card">
+                  <div style={{
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 1.5rem',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)'
+                  }}>
+                    <img src={cappuccino} alt="products image" style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }} />
+                  </div>
+                  <h3 className="products__name">Cappuccino</h3>
+                  <span className="products__price">10.00 RON</span>
                 </article>
               </div>
             </div>
@@ -80,7 +156,7 @@ function App() {
         {/* STEPS SECTION */}
         <section className="steps" id="steps">
           <div className="steps__bg section">
-            <h2 className="section__title">Etapele producției produselor noastre</h2>
+            <h2 className="section__title">De la boabă la ceașcă: Procesul nostru</h2>
 
             <div className="steps__container container grid">
               <img src="assets/img/coffee-beans-bg.png" alt="steps image" className="steps__bg-img" />
@@ -92,11 +168,25 @@ function App() {
                   <div className="steps__circle">
                     <div className="steps__subcircle">01</div>
 
-                    <img src="assets/img/steps-green-coffee.png" alt="steps image" className="steps__img" />
+                    <div style={{
+                      width: '80%',
+                      height: '80%',
+                      borderRadius: '50%',
+                      overflow: 'hidden',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <img src={selezioneChicchi} alt="steps image" style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }} />
+                    </div>
                </div>
 
                <p className="steps__description">
-                    Recoltarea are loc anual când boabele de cafea ajung la maturitate și sunt culese pentru procesare.
+                    Recoltare selectivă: Culeșem manual doar cirezele perfect coapte, asigurând calitatea superioară a fiecărui bob.
                </p>
             </div>
 
@@ -104,11 +194,25 @@ function App() {
                 <div className="steps__circle">
                     <div className="steps__subcircle">02</div>
 
-                    <img src="assets/img/steps-coffee-beans.png" alt="steps image" className="steps__img" />
+                    <div style={{
+                      width: '80%',
+                      height: '80%',
+                      borderRadius: '50%',
+                      overflow: 'hidden',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <img src={usacareBoabe} alt="steps image" style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }} />
+                    </div>
                </div>
 
                <p className="steps__description">
-                    Boabele sunt uscate folosind tehnici umede sau uscate, în funcție de profilul de aromă dorit.
+                    Procesare și uscare: Aplicăm metode naturale sau umed pentru a extrage boabele, apoi le uscăm cu grijă pentru a dezvolta aromele complexe.
                </p>
             </div>
 
@@ -116,11 +220,25 @@ function App() {
                 <div className="steps__circle">
                     <div className="steps__subcircle">03</div>
 
-                    <img src="assets/img/steps-ground-coffee.png" alt="steps image" className="steps__img" />
+                    <div style={{
+                      width: '80%',
+                      height: '80%',
+                      borderRadius: '50%',
+                      overflow: 'hidden',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}>
+                      <img src={prajealaBoabe} alt="steps image" style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }} />
+                    </div>
                </div>
 
                <p className="steps__description">
-                    Cafeaua este prăjită cu grijă pentru a dezvolta aroma, apoi măcinată și preparată de barista noștri pentru a scoate la iveală cele mai bune note.
+                    Prăjire artizanală: Prăjim boabele la temperaturi precise pentru a dezvălui aromele unice, apoi le măcinăm proaspăt pentru fiecare ceașcă.
                </p>
             </div>
               </div>
@@ -177,16 +295,12 @@ function App() {
 
             <div className="footer__content grid">
                <div className="footer__social">
-                    <a href="https://www.facebook.com/" target="_blank" className="footer__social-link" rel="noopener noreferrer">
+                    <a href="https://www.facebook.com/cafenescu" target="_blank" className="footer__social-link" rel="noopener noreferrer">
                         <i className="ri-facebook-fill"></i>
                     </a>
 
-                    <a href="https://www.instagram.com/" target="_blank" className="footer__social-link" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/cafenescu/" target="_blank" className="footer__social-link" rel="noopener noreferrer">
                         <i className="ri-instagram-fill"></i>
-                    </a>
-
-                    <a href="https://twitter.com/" target="_blank" className="footer__social-link" rel="noopener noreferrer">
-                        <i className="ri-twitter-fill"></i>
                     </a>
                </div> 
 
@@ -205,5 +319,5 @@ function App() {
     </>
   );
 }
-
+  
 export default App;

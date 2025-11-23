@@ -1,5 +1,8 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Neonderthaw&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap');
+
 /* Minimal resets (optional) */
 html, body, #root {
   height: 100%;
@@ -215,8 +218,9 @@ img {
   background: linear-gradient(180deg,
               hsl(39, 62%, 75%) 0%,
               hsl(39, 62%, 45%) 100%);
-  color: transparent;
-
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 1.5rem;            
 }
 
@@ -837,7 +841,7 @@ img {
     text-align: initial;
   }
   .products__content {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   .products__name,
   .products__price {

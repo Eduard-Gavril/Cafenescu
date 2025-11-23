@@ -570,6 +570,10 @@ img {
 .footer__data {
   text-align: center;
   row-gap: 4.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  justify-items: center;
 }
 
 .footer__logo,
@@ -929,9 +933,11 @@ img {
     padding-block: 6rem 3rem;
   }
   .footer__data {
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: space-between;
+    align-items: start;
     text-align: initial;
+    gap: 3rem;
   }
   .footer__logo {
     margin-bottom: 1.5rem;

@@ -7,6 +7,9 @@ import cappuccino from './img/cappucino.png';
 import selezioneChicchi from './img/selezione_chicchi.png';
 import usacareBoabe from './img/usacare_boabe.png';
 import prajealaBoabe from './img/prajeala_boabe.png';
+import cafenescuLogo from './svg/CAFENESCU.svg';
+import manSvg from './svg/MAN.svg';
+import stellaChicco from './img/stella_chicco.png';
 
 function App() {
   return (
@@ -32,7 +35,7 @@ function App() {
                 Începe <i className="ri-arrow-right-s-line"></i>
               </a>
             </div>
-            <img src="../CSS/scr/freeUSE/home-coffee.png" alt="home image" className="home__img" />
+            <img src={manSvg} alt="home image" className="home__img" />
           </div>
         </section>
 
@@ -148,7 +151,7 @@ function App() {
                   La Cafenescu, pasiunea pentru cafea a început cu o misiune simplă: să aducem cele mai bune boabe din fermele peruviene direct în ceasca ta. De la recoltare și selecție, până la prăjire și servire, lucrăm cu atenție pentru a crea experiențe consistente și memorabile.
                 </p>
               </div>
-              <img src="assets/img/about-coffee.png" alt="about image" className="about__img" />
+              <img src={manSvg} alt="about image" className="about__img" />
             </div>
           </div>
         </section>
@@ -162,7 +165,7 @@ function App() {
               <img src="assets/img/coffee-beans-bg.png" alt="steps image" className="steps__bg-img" />
 
               <div className="steps__content">
-                <img src="assets/img/steps-curve-line.svg" alt="steps image" className="steps__border" />
+                
 
                 <div className="steps__card">
                   <div className="steps__circle">
@@ -249,16 +252,61 @@ function App() {
         {/* TESTIMONIAL SECTION */}
         <section className="testimonial" id="testimonial">
           <div className="testimonial__bg section">
-            <div className="testimonial__container container grid">
-              <div className="testimonial__data">
-                <h2 className="section__title">
-                  Cafeaua este cea mai bună băutură dimineața — te ajută să te concentrezi.
-                </h2>
-
-                <span className="testimonial__name">Ion Popescu</span>
-              </div>
-
-              <img src="assets/img/testimonial-coffee.png" alt="testimonial image" className="testimonial__img" />
+            <h2 className="section__title">ceea ce spun clienții noștri</h2>
+            <div className="container" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '2rem',
+              paddingTop: '2rem'
+            }}>
+              {[
+                {
+                  name: 'Maria Ionescu',
+                  text: 'Cea mai bună cafenea din oraș! Cafeaua este întotdeauna proaspătă și aromată. Atmosfera este caldă și primitoare. Recomand cu căldură!',
+                  rating: 5
+                },
+                {
+                  name: 'Alexandru Gheorghe',
+                  text: 'Serviciu excelent și produse de calitate superioară! Espresso-ul lor este perfect, iar personalul este foarte prietenos. Un loc minunat pentru o pauză de cafea.',
+                  rating: 5
+                },
+                {
+                  name: 'Elena Dumitrescu',
+                  text: 'Cafeneaua mea preferată! Boabele sunt proaspăt prăjite și se simte în gust. Prețurile sunt corecte și mereu revin cu plăcere. Bravo Cafenescu!',
+                  rating: 5
+                }
+              ].map((testimonial, index) => (
+                <div key={index} style={{
+                  backgroundColor: 'var(--first-color-light)',
+                  padding: '2rem',
+                  borderRadius: '1rem',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1rem'
+                }}>
+                  <div style={{
+                    display: 'flex',
+                    gap: '0.5rem'
+                  }}>
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <img key={i} src={stellaChicco} alt="rating" style={{width: '30px', height: '30px', objectFit: 'contain'}} />
+                    ))}
+                  </div>
+                  <p className="testimonial__description" style={{
+                    lineHeight: '1.6',
+                    fontStyle: 'italic',
+                    color: 'var(--text-color)'
+                  }}>"{testimonial.text}"</p>
+                  <div style={{
+                    marginTop: 'auto',
+                    paddingTop: '1rem',
+                    borderTop: '1px solid var(--text-color-light)'
+                  }}>
+                    <span className="testimonial__name" style={{color: 'var(--title-color)'}}>{testimonial.name}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -267,17 +315,16 @@ function App() {
       {/* FOOTER */}
       <footer className="footer">
         <div className="footer__bg">
-          <img src="assets/img/coffee-beans-bg.png" alt="footer image" className="footer__bg-img" />
+          
 
           <div className="footer__container container grid">
             <div className="footer__data grid">
               <div>
                 <a href="#" className="footer__logo">
-                  <img src="assets/img/logo.png" alt="logo" />
-                  Cafenescu
+                  <img src={cafenescuLogo} alt="Cafenescu logo" style={{width: '250px', height: 'auto'}} />
                 </a>
 
-                <h3 className="footer__title">Abonează-te la newsletter</h3>
+                <h3 className="footer__title">Abonă-te la newsletter</h3>
               </div>
 
               <form action="" className="footer__form grid">
@@ -305,7 +352,7 @@ function App() {
                </div> 
 
                <span className="footer__copy">
-                Copyright &#169; 2025 Toate drepturile rezervate | <a href="https://github.com/diyorcodes">DiyorCodes</a>
+                Copyright &#169; 2025 Toate drepturile rezervate | <a href="https://veni-vidi-edi.netlify.app/">Veni Vidi Edi</a>
                </span>
             </div>
           </div>

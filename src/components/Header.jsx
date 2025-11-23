@@ -1,4 +1,5 @@
 import React from 'react';
+import cafenescuLogo from '../svg/CAFENESCU.svg';
 
 export default function Header() {
   return (
@@ -6,8 +7,7 @@ export default function Header() {
       <div className="header__border"></div>
       <nav className="nav container">
         <a href="#" className="nav__logo">
-          <img src="/assets/img/logo.png" alt="logo" />
-          Cafenescu
+          <img src={cafenescuLogo} alt="Cafenescu logo" style={{width: '400px', height: 'auto'}} />
         </a>
 
         <div className="nav__menu">

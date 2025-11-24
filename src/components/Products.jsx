@@ -75,6 +75,7 @@ function Products() {
   const handleInteractionStart = (e) => {
     if (!isMobile) return;
     
+    setIsPaused(true);
     setIsDragging(true);
     const pageX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
     setStartX(pageX);
@@ -89,9 +90,15 @@ function Products() {
   const handleInteractionMove = (e) => {
     if (!isDragging || !isMobile) return;
     
-    e.preventDefault();
+    // Prevent page scroll only when actually dragging horizontally
+    if (e.cancelable) {
+      e.preventDefault();
+    }
+    
     const pageX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
-    const walk = (startX - pageX) * 2; // Multiply by 2 for faster scroll
+    const walk = (startX - pageX) * 1.5;
+    
+    // Update offset smoothly
     setOffset(scrollLeft + walk);
   };
 
@@ -100,19 +107,12 @@ function Products() {
     
     setIsDragging(false);
     
-    // Resume auto-scroll after 0.50 seconds of inactivity
+    // Resume auto-scroll after 0.75 seconds of inactivity
     const timer = setTimeout(() => {
       setIsPaused(false);
-    }, 500);
+    }, 750);
     
     setUserInteractionTimer(timer);
-  };
-
-  // Pause on touch/interaction
-  const handleTouchStart = () => {
-    if (isMobile) {
-      setIsPaused(true);
-    }
   };
 
   return (
@@ -129,16 +129,14 @@ function Products() {
               position: 'relative',
               overflow: 'hidden',
               padding: '2rem 3rem',
-              cursor: isMobile ? (isDragging ? 'grabbing' : 'grab') : 'default'
+              cursor: isMobile ? (isDragging ? 'grabbing' : 'grab') : 'default',
+              touchAction: 'pan-y pinch-zoom'
             }}
             onMouseDown={handleInteractionStart}
             onMouseMove={handleInteractionMove}
             onMouseUp={handleInteractionEnd}
             onMouseLeave={handleInteractionEnd}
-            onTouchStart={(e) => {
-              handleTouchStart();
-              handleInteractionStart(e);
-            }}
+            onTouchStart={handleInteractionStart}
             onTouchMove={handleInteractionMove}
             onTouchEnd={handleInteractionEnd}
           >
@@ -146,9 +144,11 @@ function Products() {
               display: 'flex',
               gap: '1.5rem',
               transform: `translateX(-${offset}px)`,
-              transition: isDragging ? 'none' : 'transform 0.1s ease-out',
+              transition: isDragging ? 'none' : 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
               willChange: 'transform',
-              userSelect: 'none'
+              userSelect: 'none',
+              WebkitUserSelect: 'none',
+              WebkitTouchCallout: 'none'
             }}>
             {infiniteProducts.map((product, index) => (
               <article 

@@ -1083,16 +1083,7 @@ img {
 }
 
 .testimonial::after {
-  content: '"';
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 6rem;
-  font-family: var(--font-display);
-  color: var(--gold-accent);
-  opacity: 0.15;
-  z-index: 1;
+  display: none;
 }
 
 .testimonial__bg {
@@ -1359,11 +1350,18 @@ img {
 
 @media screen and (max-width: 1023px) {
   .steps__content {
-    padding-inline: 1.5rem;
+    padding-inline: 0.5rem;
   }
   
   .steps__card {
-    margin-inline: auto;
+    margin-inline: 0;
+    width: 100%;
+    padding-inline: 0.5rem;
+  }
+  
+  .steps__circle {
+    width: 160px;
+    height: 160px;
   }
 }
 

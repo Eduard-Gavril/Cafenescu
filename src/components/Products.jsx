@@ -100,10 +100,10 @@ function Products() {
     
     setIsDragging(false);
     
-    // Resume auto-scroll after 0.75 seconds of inactivity
+    // Resume auto-scroll after 0.50 seconds of inactivity
     const timer = setTimeout(() => {
       setIsPaused(false);
-    }, 0);
+    }, 500);
     
     setUserInteractionTimer(timer);
   };

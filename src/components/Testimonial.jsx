@@ -24,8 +24,8 @@ function Testimonial() {
 
   return (
     <section className="testimonial" id="testimonial">
-      <div className="testimonial__bg section">
-        <h2 className="section__title">ceea ce spun clienții noștri</h2>
+      <div className="testimonial__bg section" style={{paddingTop: '1rem', marginTop: '20px'}}>
+        <h2 className="section__title" style={{marginBottom: '5rem', marginTop: '0'}}>ceea ce spun clienții noștri</h2>
         <div className="container" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',

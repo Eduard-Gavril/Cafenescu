@@ -16,7 +16,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'steps', 'testimonial'];
+      const sections = ['home', 'about', 'products', 'steps', 'testimonial'];
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -71,16 +71,16 @@ export default function Header() {
             </li>
 
             <li className="nav__item">
-              <a href="#about" className={`nav__link ${activeSection === 'about' ? 'active-link' : ''}`} onClick={() => scrollToSection('about')}>
-                <i className="ri-information-fill"></i>
-                <span>About</span>
+              <a href="#products" className={`nav__link ${activeSection === 'products' ? 'active-link' : ''}`} onClick={() => scrollToSection('products')}>
+                <i className="ri-cup-fill"></i>
+                <span>Meniu</span>
               </a>
             </li>
 
             <li className="nav__item">
-              <a href="#steps" className={`nav__link ${activeSection === 'steps' ? 'active-link' : ''}`} onClick={() => scrollToSection('steps')}>
-                <i className="ri-cup-fill"></i>
-                <span>Menu</span>
+              <a href="#about" className={`nav__link ${activeSection === 'about' ? 'active-link' : ''}`} onClick={() => scrollToSection('about')}>
+                <i className="ri-information-fill"></i>
+                <span>Despre noi</span>
               </a>
             </li>
 

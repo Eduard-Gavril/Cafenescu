@@ -144,7 +144,7 @@ function Products() {
               display: 'flex',
               gap: '1.5rem',
               transform: `translateX(-${offset}px)`,
-              transition: isDragging ? 'none' : 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              transition: 'none',
               willChange: 'transform',
               userSelect: 'none',
               WebkitUserSelect: 'none',

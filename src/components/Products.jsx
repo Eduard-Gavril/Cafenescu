@@ -66,7 +66,7 @@ function Products() {
       <div className="products__bg section">
         <div className="products__container container">
           <h2 className="section__title" style={{ color: 'var(--milk-foam)', marginBottom: '4rem' }}>
-            I Nostri Prodotti
+            Produsele noastre
           </h2>
           
           <div className="products__carousel" style={{

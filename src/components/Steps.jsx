@@ -33,8 +33,6 @@ function Steps() {
         <h2 className="section__title">De la boabă la ceașcă: Procesul nostru</h2>
 
         <div className="steps__container container grid">
-          <img src="assets/img/coffee-beans-bg.png" alt="steps image" className="steps__bg-img" />
-
           <div className="steps__content">
             {steps.map((step) => (
               <div key={step.id} className={`steps__card ${step.cardMove ? 'steps__card-move' : ''}`}>

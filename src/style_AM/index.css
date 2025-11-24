@@ -279,10 +279,25 @@ img {
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: linear-gradient(135deg, 
+    background: 
+      repeating-linear-gradient(
+        90deg,
+        rgba(212, 165, 116, 0.4) 0px,
+        rgba(212, 165, 116, 0.4) 2px,
+        rgba(184, 146, 106, 0.5) 2px,
+        rgba(184, 146, 106, 0.5) 4px,
+        rgba(212, 165, 116, 0.4) 4px,
+        rgba(212, 165, 116, 0.4) 60px,
+        rgba(101, 67, 33, 0.7) 60px,
+        rgba(101, 67, 33, 0.7) 65px,
+        rgba(70, 45, 20, 0.8) 65px,
+        rgba(70, 45, 20, 0.8) 70px
+      ),
+      linear-gradient(135deg, 
                 var(--rich-coffee) 0%,
                 var(--warm-brown) 50%,
                 var(--caramel) 100%);
+    background-size: 70px 100%, 100% 100%;
     padding: 2rem 2rem 2rem;
     backdrop-filter: blur(10px);
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
@@ -408,16 +423,22 @@ img {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 0.75rem 1rem;
-    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
     transition: all 0.3s ease;
     flex-direction: row;
+    background: rgba(249, 246, 242, 0.15);
+    border: 2px solid rgba(212, 165, 116, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .nav__link:hover,
   .nav__link.active-link {
-    background: rgba(212, 165, 116, 0.2);
+    background: rgba(212, 165, 116, 0.3);
+    border-color: var(--gold-accent);
     transform: translateX(8px);
+    box-shadow: 0 6px 16px rgba(212, 165, 116, 0.3);
   }
 
   .nav__link i {
@@ -1325,6 +1346,7 @@ img {
 
   .steps__content {
     row-gap: 3rem;
+    padding-inline: 2rem;
   }
   .steps__card {
     width: initial;
@@ -1332,6 +1354,16 @@ img {
   .steps__border {
     left: 0;
     top: 5.5rem;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .steps__content {
+    padding-inline: 1.5rem;
+  }
+  
+  .steps__card {
+    margin-inline: auto;
   }
 }
 
